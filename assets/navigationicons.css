@@ -36,7 +36,7 @@ li[data-icon]:before, a[data-icon]:before, .navigationicons-duplicator span:befo
 .navigationicons-duplicator div.content { padding: 3px 5px 5px 10px !important; overflow: auto; }
 input.navIcon {
 	font-family: "Lucida Console", Monaco, monospace;
-	width: 180px;
+	width: 180px !important;
 	-webkit-font-smoothing: antialiased;
 	float: right;
 	}
