@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="navigationicons" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+	<name>Admin Navigation Icons</name>
+	<description>Spice up your Symphony admin navigation with webfont icons.</description>
+	<repo type="github">https://github.com/brockpetrie/navigationicons</repo>
+	<url type="discuss"></url>
+	<types>
+		<type>Interface</type>
+	</types>
+	<authors>
+		<author>
+			<name github="brockpetrie" symphony="brockpetrie">Brock Petrie</name>
+			<website>http://www.brockpetrie.com</website>
+		</author>
+	</authors>
+	<releases>
+		<release version="1.0" date="2013-10-20" min="2.3.x">
+			<![CDATA[- Initial commit]]>
+		</release>
+	</releases>
+</extension>
