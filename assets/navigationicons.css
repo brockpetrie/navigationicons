@@ -10,7 +10,7 @@
 	}
 
 li[data-icon]:before, a[data-icon]:before, .navigationicons-duplicator span:before {
-	font-family: 'navigationicons';
+	font-family: 'navigationicons' !important;
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
