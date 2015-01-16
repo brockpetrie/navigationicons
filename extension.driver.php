@@ -75,7 +75,7 @@
 			$fieldset->appendChild(new XMLElement('legend', __('Navigation Icons')));
 			//$fieldset->appendChild(new XMLElement('p', __(''), array('class' => 'help')));
 
-			$div = new XMLElement('div', null, array('class' => 'frame'));
+			$div = new XMLElement('span', null, array('class' => 'frame'));
 			$duplicator = new XMLElement('ol');
 			$duplicator->setAttribute('class', 'navigationicons-duplicator');
 
@@ -88,9 +88,9 @@
 				$iconInput = Widget::Input('settings[navigationicons][navigation][navitem'. $i .'][]', $val, 'text', array('class' => 'navIcon', 'placeholder' => 'Ligature or symbol'));
 				$labelInput = Widget::Input('settings[navigationicons][navigation][navitem'. $i .'][]', $item, 'hidden');
 
+				$li->appendChild($navLabel);
 				$li->appendChild($iconInput);
 				$li->appendChild($labelInput);
-				$li->appendChild($navLabel);
 				$duplicator->appendChild($li);
 			}
 
