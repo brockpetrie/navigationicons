@@ -49,3 +49,7 @@ input.navLabel {
 	padding-left: 0;
 	}
 p.navigationiconshelp { padding-top: 10px; }
+
+.navigationicons-duplicator li {
+	clear: both;
+}
