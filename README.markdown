@@ -1,9 +1,9 @@
 # Admin Navigation Icons
 
--  Version: 1.0
+-  Version: 1.1
 -  Author: [Brock Petrie](http://www.brockpetrie.com)
--  Build Date: 2013-10-20
--  Requirements: Symphony 2.3.x
+-  Build Date: 2015-05-25
+-  Requirements: Symphony 2.3.x-2.6.x
 
 ## Description
 
