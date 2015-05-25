@@ -49,8 +49,11 @@
 	-------------------------------------------------------------------------*/
 
 		public function appendAssets() {
-			$config = Symphony::Configuration()->get('navigation', 'navigationicons');
-			$script = new XMLElement('script', __('var navigationArr = '. $config .';'), array('type' => 'text/javascript'));
+			$config = json_decode(Symphony::Configuration()->get('navigation', 'navigationicons'), true);
+			foreach ($config as $key => $value) {
+				$config[__($key)] = __($value);
+			}
+			$script = new XMLElement('script', __('var navigationArr = '. json_encode($config).';'), array('type' => 'text/javascript'));
 			Administration::instance()->Page->addElementToHead($script, 1000, true);
 			Administration::instance()->Page->addScriptToHead(URL . '/extensions/navigationicons/assets/navigationicons.js', 1001, false);
 			Administration::instance()->Page->addStylesheetToHead(URL . '/extensions/navigationicons/assets/navigationicons.css', 'screen', 1002, false);
