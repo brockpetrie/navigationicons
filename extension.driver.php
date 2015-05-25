@@ -80,7 +80,8 @@
 	-------------------------------------------------------------------------*/
 
 		public function appendAssets() {
-			$config = static::decode(Symphony::Configuration()->get('navigation', 'navigationicons'), true);
+			$originalConfig = static::decode(Symphony::Configuration()->get('navigation', 'navigationicons'), true);
+			$config = $originalConfig;
 			if (is_array($config)) {
 				foreach ($config as $key => $value) {
 					$config[__($key)] = __($value);
@@ -88,14 +89,14 @@
 			} else {
 				$config = array();
 			}
-			$config = static::encode($config);
-			$script = new XMLElement('script', __('var navigationArr = '. $config  .';'), array('type' => 'text/javascript'));
+			$script = new XMLElement('script', __('var navigationArr = '. static::encode($config) .';'), array('type' => 'text/javascript'));
 			Administration::instance()->Page->addElementToHead($script, 1000, true);
 			Administration::instance()->Page->addScriptToHead(URL . '/extensions/navigationicons/assets/navigationicons.js', 1001, false);
 			Administration::instance()->Page->addStylesheetToHead(URL . '/extensions/navigationicons/assets/navigationicons.css', 'screen', 1002, false);
 			// Reset the value in the array, to prevent fighting against
-			// the Configuration::write method which add slashes
-			Symphony::Configuration()->set('navigation', $config, 'navigationicons');
+			// the Configuration::write method which add slashes.
+			// Save the original values, not the translated ones.
+			Symphony::Configuration()->set('navigation', static::encode($originalConfig), 'navigationicons');
 		}
 
 		public function parseNav($context) {
