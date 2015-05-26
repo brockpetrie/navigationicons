@@ -29,6 +29,7 @@ li[data-icon]:before, a[data-icon]:before, .navigationicons-duplicator span:befo
 	}
 
 /* Preferences panel */
+.navigationicons-duplicator>li {clear:both;}
 .navigationicons-duplicator label { display: none; }
 .navigationicons-duplicator span { padding: 0; margin: 0; display: inline-block; color: inherit; font-size: 109.09%; padding-top: 5px; }
 .navigationicons-duplicator span:before { top: 0; opacity: 0.5; }
@@ -49,7 +50,3 @@ input.navLabel {
 	padding-left: 0;
 	}
 p.navigationiconshelp { padding-top: 10px; }
-
-.navigationicons-duplicator li {
-	clear: both;
-}
