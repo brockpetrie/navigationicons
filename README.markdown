@@ -29,6 +29,11 @@ While this extension does come with a default webfont containing a trio of icons
 
 ## Change log
 
+**Version 1.1** 
+
+-  Fixed issues with backend translations.
+-  Fixed issues with json encoding.
+
 **Version 1.0** 
 
 -  Initial release.
