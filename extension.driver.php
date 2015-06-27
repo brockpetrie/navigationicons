@@ -155,13 +155,12 @@
 
 		public function savePreferences(array &$context){
 			$config = array();
-			foreach ($context['settings']['navigationicons']['navigation'] as &$item) {
-				if ($item[0] != '') $config[$item[1]] = $item[0];
+			if (is_array($context['settings']['navigationicons']['navigation'])) {
+				foreach ($context['settings']['navigationicons']['navigation'] as &$item) {
+					if ($item[0] != '') $config[$item[1]] = $item[0];
+				}
+				//print_r($config);
+				$context['settings']['navigationicons']['navigation'] = static::encode($config);
 			}
-			//print_r($config);
-			$context['settings']['navigationicons']['navigation'] = static::encode($config);
 		}
-
-
-
 	}
