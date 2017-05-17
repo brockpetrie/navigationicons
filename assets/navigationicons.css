@@ -7,9 +7,9 @@
 		url('fonts/navigationicons.svg?#navigationicons') format('svg');
 	font-weight: normal;
 	font-style: normal;
-	}
+}
 
-li[data-icon]:before, a[data-icon]:before, .navigationicons-duplicator span:before {
+li > span[data-icon]:before, span[data-icon]:before, .navigationicons-duplicator span:before {
 	font-family: 'navigationicons' !important;
 	speak: none;
 	font-style: normal;
@@ -22,25 +22,58 @@ li[data-icon]:before, a[data-icon]:before, .navigationicons-duplicator span:befo
 	content: attr(data-icon);
 	font-size: 13px;
 	display: inline-block;
-	padding-right: 5px;
+	padding-right: 0.5rem;
 	position: relative;
-	top: 2px;
+	top: 0;
 	text-rendering: optimizeLegibility;
-	}
+}
+
+.navigationicons-duplicator span:before {
+	top: 1px!important;
+}
 
 /* Preferences panel */
-.navigationicons-duplicator>li {clear:both;}
-.navigationicons-duplicator label { display: none; }
-.navigationicons-duplicator span { padding: 0; margin: 0; display: inline-block; color: inherit; font-size: 109.09%; padding-top: 5px; }
-.navigationicons-duplicator span:before { top: 0; opacity: 0.5; }
-.navigationicons-duplicator span[data-icon='']:before { display: none; }
-.navigationicons-duplicator div.content { padding: 3px 5px 5px 10px !important; overflow: auto; }
+
+.navigationicons-duplicator > li {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navigationicons-duplicator > li + li {
+	margin-top: 1rem;
+}
+
+.navigationicons-duplicator label {
+	display: none;
+}
+
+.navigationicons-duplicator span {
+	color: inherit;
+}
+
+.navigationicons-duplicator span:before {
+	top: 0;
+	opacity: 0.5;
+}
+
+.navigationicons-duplicator span[data-icon='']:before {
+	display: none;
+}
+
+.navigationicons-duplicator div.content {
+	padding: 3px 5px 5px 10px!important;
+	overflow: auto;
+}
+
 input.navIcon {
 	font-family: "Lucida Console", Monaco, monospace;
 	width: 180px !important;
 	-webkit-font-smoothing: antialiased;
 	float: right;
-	}
+}
+
 input.navLabel {
 	background: none;
 	box-shadow: none;
@@ -48,5 +81,6 @@ input.navLabel {
 	display: inline-block;
 	width: auto;
 	padding-left: 0;
-	}
+}
+
 p.navigationiconshelp { padding-top: 10px; }
